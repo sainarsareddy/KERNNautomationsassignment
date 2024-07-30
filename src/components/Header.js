@@ -1,17 +1,17 @@
-import { Box, Button, Flex, Image, Spacer } from "@chakra-ui/react";
+import { Box, Button, Flex, Spacer } from "@chakra-ui/react";
 import React from "react";
 
 const Header = () => {
   return (
-    <Flex bg="blue.50" p={4} alignItems="center">
+    <Flex bgImage={"/"} p={4} alignItems="center">
       <Box>
-        <Image src="/path/to/logo.png" alt="Logo" boxSize="40px" />
+        <h1>SKYCHEX</h1>
       </Box>
       <Spacer />
-      <Button colorScheme="blue" variant="outline" mr={4}>
-        USD
+      <Button colorScheme="black" variant="outline" mr={4}>
+        Login
       </Button>
-      <Button colorScheme="blue">Sign Up</Button>
+      <Button colorScheme="black">Sign Up</Button>
     </Flex>
   );
 };
