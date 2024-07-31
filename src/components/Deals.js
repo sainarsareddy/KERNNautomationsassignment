@@ -1,31 +1,67 @@
-import { Box, Grid, GridItem, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import React from "react";
 
 const deals = [
-  { country: "France", price: "$110", flag: "/path/to/france.png" },
-  { country: "Italy", price: "$110", flag: "/path/to/italy.png" },
-  // Add more deals here
+  { country: "Paris", price: "$110", flag: "/images/paris.jpg" },
+  { country: "Paris", price: "$110", flag: "/images/paris.jpg" },
+  { country: "Paris", price: "$110", flag: "/images/paris.jpg" },
+  { country: "Paris", price: "$110", flag: "/images/paris.jpg" },
+  { country: "Paris", price: "$110", flag: "/images/paris.jpg" },
+  { country: "Paris", price: "$110", flag: "/images/paris.jpg" },
+  { country: "Paris", price: "$110", flag: "/images/paris.jpg" },
+  { country: "Paris", price: "$110", flag: "/images/paris.jpg" },
+  { country: "Paris", price: "$110", flag: "/images/paris.jpg" },
+  { country: "Paris", price: "$110", flag: "/images/paris.jpg" },
+  { country: "Paris", price: "$110", flag: "/images/paris.jpg" },
+  { country: "Paris", price: "$110", flag: "/images/paris.jpg" },
+  { country: "Paris", price: "$110", flag: "/images/paris.jpg" },
+  { country: "Paris", price: "$110", flag: "/images/paris.jpg" },
+  { country: "Paris", price: "$110", flag: "/images/paris.jpg" },
 ];
 
 const Deals = () => {
   return (
-    <Box mt={8}>
-      <Text fontSize="xl" fontWeight="bold" mb={4}>
+    <Box textAlign="center">
+      <Text textColor="grey" fontWeight="800" marginTop={20} fontSize="xl">
         Great deals on plane tickets
       </Text>
-      <Grid templateColumns="repeat(auto-fit, minmax(150px, 1fr))" gap={6}>
+      <Grid
+        p={10}
+        mx={40}
+        templateColumns="repeat(3, minmax(150px, 1fr))"
+        gap={6}
+      >
         {deals.map((deal) => (
-          <GridItem key={deal.country} textAlign="center">
-            <Image
-              src={deal.flag}
-              alt={deal.country}
-              boxSize="40px"
-              mx="auto"
-            />
-            <Text mt={2} fontWeight="bold">
-              {deal.country}
-            </Text>
-            <Text color="blue.500">{deal.price}</Text>
+          <GridItem width="280px" key={deal.country} textAlign="center">
+            <Box
+              _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}
+              transition="all 0.3s ease"
+              mx={2}
+              borderRadius="10"
+              padding={3}
+              boxShadow="md"
+            >
+              <Flex
+                boxShadow={5}
+                textAlign="center"
+                justifyContent="space-between"
+              >
+                <Flex>
+                  <Image
+                    src={deal.flag}
+                    alt={deal.country}
+                    boxSize="30px"
+                    mx="auto"
+                  />
+                  <Text ml={5} textColor="gray" fontWeight="500">
+                    {deal.country}
+                  </Text>
+                </Flex>
+                <Text fontWeight="900" color="blue.300">
+                  {deal.price}
+                </Text>
+              </Flex>
+            </Box>
           </GridItem>
         ))}
       </Grid>

@@ -1,7 +1,8 @@
 import { Box, Button, Flex, Input, Select } from "@chakra-ui/react";
 import React from "react";
 
-const SearchForm = () => {
+
+const SearchForm = ({ onSearch }) => {
   return (
     <Box mt="-200px">
       <Box
@@ -14,10 +15,22 @@ const SearchForm = () => {
         width="300px"
       >
         <Flex borderRadius={50} mb={4}>
-          <Button bgColor="blue.300" flex="1" mr={1} color="white">
+          <Button
+            _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}
+            transition="all 0.3s ease"
+            bgColor="blue.300"
+            flex="1"
+            mr={1}
+            color="white"
+          >
             Return
           </Button>
-          <Button flex="1" colorScheme="gray">
+          <Button
+            _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}
+            transition="all 0.3s ease"
+            flex="1"
+            colorScheme="gray"
+          >
             One way
           </Button>
         </Flex>
@@ -32,17 +45,30 @@ const SearchForm = () => {
       >
         <Flex position={"relative"} mx="30px" pt="60px">
           <Flex mb={4}>
-            <Input placeholder="Gdansk (GDN)" mr={2} />
-            <Input placeholder="Poznan (POZ)" />
+            <Input
+              _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}
+              transition="all 0.3s ease"
+              placeholder="Gdansk (GDN)"
+              mr={2}
+            />
+            <Input
+              _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}
+              transition="all 0.3s ease"
+              placeholder="Poznan (POZ)"
+            />
           </Flex>
           <Flex mb={4}>
             <Input
+              _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}
+              transition="all 0.3s ease"
               width="150px"
               type="datetime-local"
               placeholder="Departure"
               mx={2}
             />
             <Input
+              _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}
+              transition="all 0.3s ease"
               width="100px"
               textColor="black"
               placeholder="Return"
@@ -50,9 +76,21 @@ const SearchForm = () => {
             />
           </Flex>
           <Flex mb={4}>
-            <Select placeholder="Passengers and class" />
+            <Select
+              _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}
+              transition="all 0.3s ease"
+              placeholder="Passengers and class"
+            />
           </Flex>
-          <Button bgColor="blue.300" colorScheme="blue" mx="20px" width="20%">
+          <Button
+            _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}
+            transition="all 0.3s ease"
+            bgColor="blue.300"
+            colorScheme="blue"
+            mx="20px"
+            width="20%"
+            onClick={onSearch}
+          >
             Search
           </Button>
         </Flex>
@@ -60,5 +98,7 @@ const SearchForm = () => {
     </Box>
   );
 };
+
+
 
 export default SearchForm;

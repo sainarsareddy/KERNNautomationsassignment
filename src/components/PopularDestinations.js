@@ -12,42 +12,58 @@ const destinations = [
     city: "Rome",
     country: "Italy",
     price: "$110",
-    img: "/path/to/rome.jpg",
+    img: "/images/rome.jpg",
   },
   {
     city: "Lisbon",
     country: "Portugal",
     price: "$110",
-    img: "/path/to/lisbon.jpg",
+    img: "/images/lisbon.jpg",
   },
   {
     city: "Amsterdam",
     country: "Netherlands",
     price: "$110",
-    img: "/path/to/amsterdam.jpg",
+    img: "/images/amsterdam.jpg",
   },
 ];
 
 const PopularDestinations = () => {
   return (
     <Box mt={8} textAlign="center">
-      <Text textColor="grey" fontSize="xl" fontWeight="800" mb={8}>
+      <Text textColor="grey" fontSize="xl" fontWeight="800" my="50px">
         Popular right now
       </Text>
-      <Flex justify="space-around">
+      <Flex mx="80px" justify="space-around">
         {destinations.map((dest) => (
-          <Box key={dest.city} textAlign="center">
+          <Box
+            _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}
+            transition="all 0.3s ease"
+            borderRadius={20}
+            boxShadow="xl"
+            key={dest.city}
+            textAlign="center"
+          >
             <Image
-              height="200px"
+              _hover={{ transform: "scale(1.10)", boxShadow: "lg" }}
+              transition="all 0.3s ease"
+              height="220px"
               src={dest.img}
               alt={dest.city}
-              borderRadius="md"
+              borderRadius={20}
             />
-            <Text mt={2} fontWeight="bold">
-              {dest.city}
-            </Text>
-            <Text>{dest.country}</Text>
-            <Text color="blue.500">{dest.price}</Text>
+            <Flex padding={4} justifyContent="space-between">
+              <Box>
+                <Text fontWeight="bold">{dest.city}</Text>
+                <Text>{dest.country}</Text>
+              </Box>
+              <Box>
+                <Text fontWeight="900" color="blue.300">
+                  {dest.price}
+                </Text>
+                <Text>Starting at</Text>
+              </Box>
+            </Flex>
           </Box>
         ))}
       </Flex>

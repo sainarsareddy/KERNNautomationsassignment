@@ -6,13 +6,22 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import PopularDestinations from "./components/PopularDestinations";
 import SearchForm from "./components/SearchForm";
+import FlightDetails from "./FlightDetails";
+
+
 
 const App = () => {
+  const [showResults, setShowResults] = useState(false);
+
+  const handleSearch = () => {
+    setShowResults(true);
+  };
   return (
     <Box bg="gray.50">
       <Header />
-      <Container maxW="container.xl" p={4}>
-        <SearchForm />
+      <Container backgroundColor="azure" maxW="container.xl" p={4}>
+        <SearchForm onSearch={handleSearch} />
+        {showResults && <FlightDetails />}
         <PopularDestinations />
         <Deals />
         <EmailSubscription />
