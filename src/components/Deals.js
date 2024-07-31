@@ -26,9 +26,13 @@ const Deals = () => {
         Great deals on plane tickets
       </Text>
       <Grid
+        mr={{ base: 10 }}
         p={10}
-        mx={40}
-        templateColumns="repeat(3, minmax(150px, 1fr))"
+        mx={{ base: 0, md: 40 }}
+        templateColumns={{
+          base: "repeat(1,1fr)",
+          md: "repeat(3, minmax(150px, 1fr))",
+        }}
         gap={6}
       >
         {deals.map((deal) => (

@@ -34,7 +34,11 @@ const PopularDestinations = () => {
       <Text textColor="grey" fontSize="xl" fontWeight="800" my="50px">
         Popular right now
       </Text>
-      <Flex mx="80px" justify="space-around">
+      <Flex
+        direction={{ base: "column", md: "row" }}
+        mx="80px"
+        justify="space-around"
+      >
         {destinations.map((dest) => (
           <Box
             _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}

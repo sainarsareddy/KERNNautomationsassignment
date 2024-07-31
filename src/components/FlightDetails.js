@@ -1,99 +1,173 @@
-import { Box, Button, Flex, Grid, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Divider,
+  Flex,
+  Grid,
+  GridItem,
+  HStack,
+  Text,
+} from "@chakra-ui/react";
 import React from "react";
 
 const FlightDetails = () => {
-  const flightData = [
+  const flights = [
     {
-      date: "Wed, Oct 18",
-      outbound: "Gdansk Lech Walesa GDN",
-      inbound: "Poznan - Lawica POZ",
-      outboundTime: "21:50",
-      inboundTime: "23:00",
-      duration: "1h10m",
-      stops: "Direct",
+      outbound: {
+        time: "21:50",
+        from: "Gdansk Lech Walesa GDN",
+        duration: "1h 10m",
+        to: "Poznan - Lawica POZ",
+        direct: true,
+      },
+      inbound: {
+        time: "21:50",
+        from: "Poznan - Lawica POZ",
+        duration: "1h 10m",
+        to: "Gdansk Lech Walesa GDN",
+        direct: true,
+      },
       price: "$110",
-      included: "Included: 1",
+      luggage: "Included: 1 bag",
     },
     {
-      date: "Wed, Oct 18",
-      outbound: "Gdansk Lech Walesa GDN",
-      inbound: "Poznan - Lawica POZ",
-      outboundTime: "21:50",
-      inboundTime: "23:00",
-      duration: "1h10m",
-      stops: "Direct",
+      outbound: {
+        time: "21:50",
+        from: "Gdansk Lech Walesa GDN",
+        duration: "1h 10m",
+        to: "Poznan - Lawica POZ",
+        direct: true,
+      },
+      inbound: {
+        time: "21:50",
+        from: "Poznan - Lawica POZ",
+        duration: "1h 10m",
+        to: "Gdansk Lech Walesa GDN",
+        direct: true,
+      },
       price: "$110",
-      included: "Included: 1",
+      luggage: "Included: 1 bag",
     },
     {
-      date: "Wed, Oct 18",
-      outbound: "Gdansk Lech Walesa GDN",
-      inbound: "Poznan - Lawica POZ",
-      outboundTime: "21:50",
-      inboundTime: "23:00",
-      duration: "1h10m",
-      stops: "Direct",
+      outbound: {
+        time: "21:50",
+        from: "Gdansk Lech Walesa GDN",
+        duration: "1h 10m",
+        to: "Poznan - Lawica POZ",
+        direct: true,
+      },
+      inbound: {
+        time: "21:50",
+        from: "Poznan - Lawica POZ",
+        duration: "1h 10m",
+        to: "Gdansk Lech Walesa GDN",
+        direct: true,
+      },
       price: "$110",
-      included: "Included: 1",
+      luggage: "Included: 1 bag",
     },
     {
-      date: "Wed, Oct 18",
-      outbound: "Gdansk Lech Walesa GDN",
-      inbound: "Poznan - Lawica POZ",
-      outboundTime: "21:50",
-      inboundTime: "23:00",
-      duration: "1h10m",
-      stops: "Direct",
+      outbound: {
+        time: "21:50",
+        from: "Gdansk Lech Walesa GDN",
+        duration: "1h 10m",
+        to: "Poznan - Lawica POZ",
+        direct: true,
+      },
+      inbound: {
+        time: "21:50",
+        from: "Poznan - Lawica POZ",
+        duration: "1h 10m",
+        to: "Gdansk Lech Walesa GDN",
+        direct: true,
+      },
       price: "$110",
-      included: "Included: 1",
+      luggage: "Included: 1 bag",
     },
+    // ... Add more flight data as needed
   ];
 
   return (
-    <Box p={4}>
-      {flightData.map((flight, index) => (
-        <Box
-          key={index}
-          bg="white"
-          boxShadow="md"
-          borderRadius="md"
-          p={4}
-          mb={4}
-          _hover={{ transform: "scale(1.02)", boxShadow: "lg" }}
+    <Box p={5}>
+      <Flex mt={{ base: 10 }} justify={{ base: "space-around" }} mb={5}>
+        <Button
+          _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}
           transition="all 0.3s ease"
+          mr={2}
+          variant="outline"
+          colorScheme="blue"
+        >
+          Cheapest
+        </Button>
+        <Button
+          _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}
+          transition="all 0.3s ease"
+          variant="outline"
+          colorScheme="blue"
+        >
+          Fastest
+        </Button>
+      </Flex>
+      {flights.map((flight, index) => (
+        <Box
+          _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}
+          transition="all 0.3s ease"
+          bgColor="white"
+          key={index}
+          border="1px solid #E2E8F0"
+          borderRadius="md"
+          overflow="hidden"
+          mb={5}
         >
           <Grid
-            templateColumns={{ base: "1fr", md: "1fr 1fr 1fr auto" }}
-            gap={4}
-            alignItems="center"
+            templateColumns={{ base: "1fr", md: "2fr 2fr 1fr" }}
+            gap={6}
+            p={5}
           >
-            <Box>
-              <Text fontWeight="bold">{flight.date}</Text>
-              <Text>{flight.outbound}</Text>
-              <Text>{flight.inbound}</Text>
+            <Box ml={{ base: 8, md: 0 }}>
+              <GridItem>
+                <Text fontWeight="bold">Wed, Oct 18 - Outbound</Text>
+                <Text>
+                  {flight.outbound.time} - {flight.outbound.from}
+                </Text>
+                <HStack>
+                  <Text>{flight.outbound.duration}</Text>
+                  {flight.outbound.direct && (
+                    <Text color="blue.500">Direct</Text>
+                  )}
+                </HStack>
+                <Text>{flight.outbound.to}</Text>
+              </GridItem>
+              <GridItem>
+                <Text fontWeight="bold">Wed, Oct 20 - Inbound</Text>
+                <Text>
+                  {flight.inbound.time} - {flight.inbound.from}
+                </Text>
+                <HStack>
+                  <Text>{flight.inbound.duration}</Text>
+                  {flight.inbound.direct && (
+                    <Text color="blue.500">Direct</Text>
+                  )}
+                </HStack>
+                <Text>{flight.inbound.to}</Text>
+              </GridItem>
             </Box>
-            <Box>
-              <Text>
-                {flight.outboundTime} - {flight.inboundTime}
-              </Text>
-              <Text>{flight.duration}</Text>
-              <Text color="blue.500">{flight.stops}</Text>
-            </Box>
-            <Box>
-              <Text>
-                {flight.inboundTime} - {flight.outboundTime}
-              </Text>
-              <Text>{flight.duration}</Text>
-              <Text color="blue.500">{flight.stops}</Text>
-            </Box>
-            <Flex direction="column" alignItems="flex-end">
-              <Text>{flight.included}</Text>
-              <Text fontWeight="bold" fontSize="xl">
+            <GridItem textAlign="center">
+              <Text>{flight.luggage}</Text>
+              <Text fontSize="2xl" fontWeight="bold">
                 {flight.price}
               </Text>
-              <Button colorScheme="blue">Book Now</Button>
-            </Flex>
+              <Button
+                _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}
+                transition="all 0.3s ease"
+                colorScheme="blue"
+                mt={2}
+              >
+                Book Now
+              </Button>
+            </GridItem>
           </Grid>
+          <Divider />
         </Box>
       ))}
     </Box>
