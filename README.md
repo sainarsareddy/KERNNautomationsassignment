@@ -1,63 +1,43 @@
-Skychex Website
+# Skychex Website
 Welcome to the Skychex Website project! This is a React-based application using Chakra UI for styling. It features a responsive design showcasing popular travel destinations.
 
-Table of Contents
-Installation
-Setup
-Usage
-Contributing
-License
-Installation
-Clone the Repository
+# Flight Booking App
+## Table of Contents
 
-First, clone the repository to your local machine:
+- [Features]
+- [Technologies Used]
+- [Setup Instructions]
+- [Screenshots]
+- [Demo Video]
 
+# Setup Instructions
+## Clone the repository:
+```bash
+git clone https://github.com/sainarsareddy/KERNNautomationsassignment.git
+```
+## Navigate to the project directory:
 
-git clone https://github.com/yourusername/skychex-website.git
-Navigate to the Project Directory
+```bash
+cd flight-booking-app
+```
 
-Change to the project directory:
+## Install the dependencies:
 
-cd skychex-website
-Install Dependencies
-
-Install the necessary npm packages:
-
+```bash
 npm install
-Setup
-Environment Variables
+```
+## Start the development server:
 
-Add Your Images
-
-Place your images in the public/images directory. The paths used in the code assume that images are located here:
-
-/images/flight.jpg
-/images/paris.jpg
-/images/rome.jpg
-/images/lisbon.jpg
-/images/amsterdam.jpg
-Usage
-Start the Development Server
-
-Run the development server with the following command:
-
+```bash
 npm start
-This will start the server and open the application in your default web browser at http://localhost:3000.
+```
 
-Build for Production
+## Screenshots
 
-To create a production build of the application, use:
 
-npm run build
-The build files will be placed in the build directory and can be deployed to a web server.
+## Demo Video
 
-Contributing
-We welcome contributions to the Skychex Website! If you have suggestions or improvements, please follow these steps:
 
-Fork the repository.
-Create a new branch (git checkout -b feature/your-feature).
-Make your changes and commit them (git commit -am 'Add new feature').
-Push to the branch (git push origin feature/your-feature).
-Open a pull request describing your changes.
-License:-
+
+## License:-
 This project is licensed under the MIT License.
