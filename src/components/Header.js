@@ -8,16 +8,15 @@ import {
 import React from "react";
 
 const Header = () => {
-  // Use useBreakpointValue to change margin and font sizes based on the screen size
   const headerMargin = useBreakpointValue({ base: "20px", md: "100px" });
   const fontSize = useBreakpointValue({ base: "lg", md: "larger" });
 
   return (
     <Box
-      height={{ base: "200px", md: "300px" }} // Adjust height for mobile
+      height={{ base: "200px", md: "300px" }}
       bg="white"
       boxShadow="md"
-      backgroundImage="url('/images/flight.jpg')" // Add the path to your background image here
+      backgroundImage="url('/images/flight.jpg')"
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
       backgroundSize="cover"
@@ -25,23 +24,23 @@ const Header = () => {
       <Flex
         p={4}
         alignItems="center"
-        mr={headerMargin} // Use responsive margin
-        flexDirection={{ base: "column", md: "row" }} // Stack items vertically on mobile
+        mr={headerMargin}
+        flexDirection={{ base: "column", md: "row" }}
         textAlign={{ base: "center", md: "left" }} // Center text on mobile
       >
         <Box
           textColor="grey"
-          fontSize={fontSize} // Responsive font size
+          fontSize={fontSize}
           fontWeight="900"
-          mb={{ base: 4, md: 0 }} // Margin bottom on mobile
+          mb={{ base: 4, md: 0 }} 
         >
           <h1>SKYCHEX</h1>
         </Box>
         <Spacer />
         <Flex
-          direction={{ base: "column", md: "row" }} // Stack buttons vertically on mobile
-          alignItems={{ base: "center", md: "center" }} // Center buttons on mobile
-          mt={{ base: 4, md: 0 }} // Margin top on mobile
+          direction={{ base: "column", md: "row" }}
+          alignItems={{ base: "center", md: "center" }} 
+          mt={{ base: 4, md: 0 }} 
         >
           <Button
             _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}
